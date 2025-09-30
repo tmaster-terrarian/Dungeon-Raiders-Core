@@ -3,8 +3,10 @@
   "id": "dunraiders",
   "version": "${version}",
   "name": "Dungeon Raiders Core",
-  "description": "Adds item labels, which can label your items",
-  "authors": [],
+  "description": "Core mod for Dungeon Raiders",
+  "authors": [
+    "bscit"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/dunraiders/icon.png",
