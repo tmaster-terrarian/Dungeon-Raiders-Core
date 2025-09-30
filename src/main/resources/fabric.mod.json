@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "dunraiders",
+  "version": "${version}",
+  "name": "Dungeon Raiders Core",
+  "description": "Adds item labels, which can label your items",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/dunraiders/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.bscit.dunraiders.client.DunraidersClient"
+    ],
+    "main": [
+      "dev.bscit.dunraiders.Dunraiders"
+    ]
+  },
+  "mixins": [
+    "dunraiders.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
