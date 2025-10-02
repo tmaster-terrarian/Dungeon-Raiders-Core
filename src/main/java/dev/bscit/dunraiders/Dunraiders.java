@@ -12,6 +12,6 @@ public class Dunraiders implements ModInitializer
     @Override
     public void onInitialize()
     {
-        LOGGER.info("dunraiders loaded");
+        LOGGER.info("Dungeon Raiders Core loaded");
     }
 }
