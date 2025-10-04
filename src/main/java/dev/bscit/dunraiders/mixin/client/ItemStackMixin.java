@@ -2,8 +2,7 @@ package dev.bscit.dunraiders.mixin.client;
 
 import com.google.common.collect.Lists;
 import dev.bscit.dunraiders.Dunraiders;
-import dev.bscit.dunraiders.client.DunraidersClient;
-import net.minecraft.client.MinecraftClient;
+import dev.bscit.dunraiders.DunraidersConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -11,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -24,9 +22,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 @Mixin(ItemStack.class)
 public class ItemStackMixin
@@ -46,6 +42,9 @@ public class ItemStackMixin
         {
             list.add(1, throwableTooltip);
         }
+
+        if(!DunraidersConfig.getConfig().client.shortenTooltips)
+            return;
 
         if(player != null && list.size() > 2)
         {

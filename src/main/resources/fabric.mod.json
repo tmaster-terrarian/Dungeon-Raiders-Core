@@ -17,11 +17,15 @@
     ],
     "main": [
       "dev.bscit.dunraiders.Dunraiders"
+    ],
+    "modmenu": [
+      "dev.bscit.dunraiders.impl.DunraidersModMenuIntegration"
     ]
   },
   "mixins": [
     "dunraiders.mixins.json"
   ],
+  "accessWidener" : "dunraiders.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
