@@ -34,18 +34,26 @@ public class ItemStackMixin
     @Unique
     private static final Text throwableTooltip = Text.translatable("dunraiders.tooltip.throwable").setStyle(Style.EMPTY.withColor(Formatting.YELLOW));
 
-    @Inject(method = "getTooltip", order = 500, locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(value = "INVOKE", ordinal = 0, target = "java/util/Objects.requireNonNull (Ljava/lang/Object;)Ljava/lang/Object;"), cancellable = true)
+    @Inject(method = "getTooltip", order = 2000, locals = LocalCapture.CAPTURE_FAILSOFT, at = @At(value = "RETURN", ordinal = 1), cancellable = true)
     public void onGetTooltip(Item.TooltipContext context, @Nullable PlayerEntity player, TooltipType type, CallbackInfoReturnable<List<Text>> cir, List<Text> list)
     {
         ItemStack thisObject = (ItemStack)(Object)this;
 
-        boolean showTooltip = Screen.hasShiftDown();
-        String[] split = Text.translatable(Dunraiders.MOD_ID + ".tooltip.holdForDetails", "$").getString().split("\\$");
+        boolean isThrowable = thisObject.isIn(TagKey.of(Registries.ITEM.getKey(), Identifier.of("supplementaries", "throwable_bricks")))
+            || thisObject.isIn(TagKey.of(Registries.ITEM.getKey(), Identifier.of("kitchenprojectiles", "light_knives")));
 
-        if(player != null)
+        if(isThrowable)
         {
-            list.add(
-                1,
+            list.add(1, throwableTooltip);
+        }
+
+        if(player != null && list.size() > 2)
+        {
+            String[] split = Text.translatable(Dunraiders.MOD_ID + ".tooltip.holdForDetails", "$").getString().split("\\$");
+            List<Text> newList = Lists.<Text>newArrayList();
+            boolean showTooltip = Screen.hasShiftDown();
+
+            newList.add(
                 Text.literal(split[0]).setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY))
                     .append(Text.translatable("dunraiders.tooltip.keyShift").setStyle(Style.EMPTY.withColor(showTooltip ? Formatting.WHITE : Formatting.GRAY)))
                     .append(Text.literal(split[1]).setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)))
@@ -53,19 +61,15 @@ public class ItemStackMixin
 
             if(!showTooltip)
             {
-                cir.setReturnValue(list);
-                return;
+                newList.addFirst(list.getFirst());
+                newList.add(list.getLast());
+                cir.setReturnValue(newList);
             }
             else
-                list.add(2, Text.literal(""));
-        }
-
-        boolean isThrowable = thisObject.isIn(TagKey.of(Registries.ITEM.getKey(), Identifier.of("supplementaries", "throwable_bricks")))
-                           || thisObject.isIn(TagKey.of(Registries.ITEM.getKey(), Identifier.of("kitchenprojectiles", "light_knives")));
-
-        if(isThrowable)
-        {
-            list.add(throwableTooltip);
+            {
+                newList.add(Text.literal(" "));
+                list.addAll(1, newList);
+            }
         }
     }
 }
