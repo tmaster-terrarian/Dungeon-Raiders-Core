@@ -19,7 +19,7 @@
       "dev.bscit.dunraiders.Dunraiders"
     ],
     "modmenu": [
-      "dev.bscit.dunraiders.impl.DunraidersModMenuIntegration"
+      "dev.bscit.dunraiders.compat.DunraidersModMenuIntegration"
     ]
   },
   "mixins": [
