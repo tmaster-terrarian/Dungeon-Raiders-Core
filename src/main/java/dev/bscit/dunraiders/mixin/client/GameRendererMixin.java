@@ -20,7 +20,7 @@ public class GameRendererMixin
     @ModifyExpressionValue(method = "bobView", at = @At(value = "MIXINEXTRAS:EXPRESSION"))
     private boolean shouldBobView(boolean original)
     {
-        if(!DunraidersConfig.getConfig().client.steadyThirdPerson)
+        if(!DunraidersConfig.getConfig().client.gameplay.steadyThirdPerson)
             return original;
 
         GameRenderer _this = (GameRenderer)(Object)this;

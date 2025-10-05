@@ -25,16 +25,34 @@ public class DunraidersConfig extends PartitioningSerializer.GlobalData
     @Config(name = "client")
     public static class ClientOptions implements ConfigData
     {
-        @ConfigEntry.Gui.Tooltip
-        public boolean shortenTooltips = true;
+        @ConfigEntry.Gui.CollapsibleObject
+        public GUI gui = new GUI();
 
-        @ConfigEntry.Gui.Tooltip
-        public boolean steadyThirdPerson = true;
+        @ConfigEntry.Gui.CollapsibleObject
+        public Gameplay gameplay = new Gameplay();
+
+        public static class GUI
+        {
+            @ConfigEntry.Gui.Tooltip
+            public boolean shortenTooltips = true;
+        }
+
+        public static class Gameplay
+        {
+            @ConfigEntry.Gui.Tooltip
+            public boolean steadyThirdPerson = true;
+        }
     }
 
     @Config(name = "common")
     public static class CommonOptions implements ConfigData
     {
-        public boolean disableCrouch = false;
+        @ConfigEntry.Gui.CollapsibleObject
+        public Gameplay gameplay = new Gameplay();
+
+        public static class Gameplay
+        {
+            public boolean disableCrouch = false;
+        }
     }
 }

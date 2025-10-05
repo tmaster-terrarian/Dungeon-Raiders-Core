@@ -25,7 +25,7 @@ public class ClientPlayerEntityMixin
     @Inject(method = "tickMovement()V", at = @At(shift = At.Shift.AFTER, value = "FIELD", opcode = Opcodes.PUTFIELD, target = "Lnet/minecraft/client/network/ClientPlayerEntity;inSneakingPose:Z"))
     private void modifyPoseCondition(CallbackInfo ci, @Local PlayerAbilities playerAbilities)
     {
-        if(!DunraidersConfig.getConfig().common.disableCrouch)
+        if(!DunraidersConfig.getConfig().common.gameplay.disableCrouch)
             return;
         ClientPlayerEntity _this = (ClientPlayerEntity)(Object)this;
         _this.inSneakingPose = !playerAbilities.flying
@@ -38,7 +38,7 @@ public class ClientPlayerEntityMixin
     @ModifyVariable(method = "sendMovementPackets()V", index = 1, at = @At(value = "STORE"))
     private boolean modifyIsSneakingInSendMovementPackets(boolean value)
     {
-        if(!DunraidersConfig.getConfig().common.disableCrouch)
+        if(!DunraidersConfig.getConfig().common.gameplay.disableCrouch)
             return value;
         return false;
     }
@@ -46,7 +46,7 @@ public class ClientPlayerEntityMixin
     @ModifyVariable(method = "tickMovement()V", index = 2, at = @At(value = "STORE"))
     private boolean modifyIsSneakingInTickMovement(boolean value)
     {
-        if(!DunraidersConfig.getConfig().common.disableCrouch)
+        if(!DunraidersConfig.getConfig().common.gameplay.disableCrouch)
             return value;
         return false;
     }

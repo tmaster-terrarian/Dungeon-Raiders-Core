@@ -44,7 +44,7 @@ public class ItemStackMixin
             list.add(1, throwableTooltip);
         }
 
-        if(!DunraidersConfig.getConfig().client.shortenTooltips)
+        if(!DunraidersConfig.getConfig().client.gui.shortenTooltips)
             return;
 
         if(player != null && list.size() > 2)
