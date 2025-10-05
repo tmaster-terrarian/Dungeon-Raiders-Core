@@ -1,4 +1,7 @@
 accessWidener v2 named
 
 accessible field net/minecraft/client/network/ClientPlayerEntity inSneakingPose Z
+accessible method net/minecraft/client/network/ClientPlayerEntity isWalking ()Z
+accessible method net/minecraft/client/network/ClientPlayerEntity canSprint ()Z
+accessible method net/minecraft/client/network/ClientPlayerEntity canVehicleSprint (Lnet/minecraft/entity/Entity;)Z
 accessible method net/minecraft/entity/player/PlayerEntity canChangeIntoPose (Lnet/minecraft/entity/EntityPose;)Z

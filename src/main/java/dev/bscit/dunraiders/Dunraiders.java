@@ -1,5 +1,6 @@
 package dev.bscit.dunraiders;
 
+import dev.bscit.dunraiders.components.DunraidersComponents;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ public class Dunraiders implements ModInitializer
     @Override
     public void onInitialize()
     {
+        DunraidersComponents.initialize();
         LOGGER.info("Dungeon Raiders Core loaded");
     }
 }
