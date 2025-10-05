@@ -27,6 +27,9 @@ public class DunraidersConfig extends PartitioningSerializer.GlobalData
     {
         @ConfigEntry.Gui.Tooltip
         public boolean shortenTooltips = true;
+
+        @ConfigEntry.Gui.Tooltip
+        public boolean steadyThirdPerson = true;
     }
 
     @Config(name = "common")
