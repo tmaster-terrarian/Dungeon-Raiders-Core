@@ -1,4 +1,4 @@
-package dev.bscit.dunraiders.impl;
+package dev.bscit.dunraiders.compat;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
