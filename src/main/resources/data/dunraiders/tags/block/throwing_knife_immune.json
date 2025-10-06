@@ -1,0 +1,15 @@
+{
+    "values": [
+        "water",
+        "lava",
+        "#air",
+        "structure_void",
+        "light",
+        "snow",
+        "cherry_leaves",
+        "flowering_azalea_leaves",
+        "flowering_azalea",
+        "chorus_flower",
+        "spore_blossom"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "type": "dunraiders:swamplands",
+    "generator": {
+        "type": "minecraft:noise",
+        "settings": "dunraiders:swamplands",
+        "biome_source": {
+            "type": "minecraft:fixed",
+            "biome": "minecraft:mangrove_swamp"
+        }
+    }
+}

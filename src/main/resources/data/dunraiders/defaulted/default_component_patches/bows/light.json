@@ -1,0 +1,8 @@
+{
+    "tags": [
+        "dunraiders:bow/light"
+    ],
+    "patch": {
+        "dunraiders:slow_down_on_use": 1
+    }
+}

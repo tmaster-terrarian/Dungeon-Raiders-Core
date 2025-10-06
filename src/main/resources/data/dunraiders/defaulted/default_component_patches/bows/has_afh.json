@@ -1,0 +1,8 @@
+{
+    "tags": [
+        "dunraiders:bow/has_afh"
+    ],
+    "patch": {
+        "archers:afh": true
+    }
+}

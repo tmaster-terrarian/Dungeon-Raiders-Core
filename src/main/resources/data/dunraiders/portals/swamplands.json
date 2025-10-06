@@ -1,0 +1,9 @@
+{
+    "block": "minecraft:mud_bricks",
+    "dim": "dunraiders:swamplands",
+    "r": 66,
+    "g": 135,
+    "b": 245,
+    "ignitionType": "BLOCK",
+    "ignitionSource": "minecraft:fire"
+}

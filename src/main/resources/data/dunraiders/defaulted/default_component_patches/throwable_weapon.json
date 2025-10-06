@@ -1,0 +1,11 @@
+{
+    "items": [
+        "minecraft:trident"
+    ],
+    "tags": [
+        "kitchenprojectiles:light_knives"
+    ],
+    "patch": {
+        "dunraiders:slow_down_on_use": 0.9
+    }
+}
