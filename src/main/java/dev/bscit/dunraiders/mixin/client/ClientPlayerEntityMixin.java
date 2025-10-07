@@ -3,15 +3,14 @@ package dev.bscit.dunraiders.mixin.client;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.bscit.dunraiders.DunraidersConfig;
+import dev.bscit.dunraiders.attribute.DunraidersAttributes;
 import dev.bscit.dunraiders.component.DunraidersComponents;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.player.PlayerAbilities;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPlayerEntity.class)
@@ -86,5 +85,13 @@ public class ClientPlayerEntityMixin
             return;
 
         _this.input.movementForward *= (float)(5 * component);
+    }
+
+    // iframes
+    @ModifyConstant(method = {"updateHealth"}, constant = @Constant(intValue = 10, ordinal = 0))
+    private int modifyMaxHurtTimeInDamage(int value)
+    {
+        ClientPlayerEntity _this = (ClientPlayerEntity)(Object)this;
+        return (int)_this.getAttributeValue(DunraidersAttributes.IMMUNITY_TICKS);
     }
 }
