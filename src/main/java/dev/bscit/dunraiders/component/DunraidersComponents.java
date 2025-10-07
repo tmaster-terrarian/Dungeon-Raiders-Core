@@ -1,4 +1,4 @@
-package dev.bscit.dunraiders.components;
+package dev.bscit.dunraiders.component;
 
 import com.mojang.serialization.Codec;
 import dev.bscit.dunraiders.Dunraiders;

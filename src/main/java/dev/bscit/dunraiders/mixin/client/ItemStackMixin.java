@@ -3,7 +3,6 @@ package dev.bscit.dunraiders.mixin.client;
 import com.google.common.collect.Lists;
 import dev.bscit.dunraiders.Dunraiders;
 import dev.bscit.dunraiders.DunraidersConfig;
-import dev.bscit.dunraiders.components.DunraidersComponents;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

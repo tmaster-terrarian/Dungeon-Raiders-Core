@@ -1,6 +1,6 @@
 package dev.bscit.dunraiders;
 
-import dev.bscit.dunraiders.components.DunraidersComponents;
+import dev.bscit.dunraiders.component.DunraidersComponents;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
