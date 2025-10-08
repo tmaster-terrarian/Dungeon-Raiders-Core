@@ -1,0 +1,8 @@
+{
+    "items": [
+        "minecraft:mace"
+    ],
+    "patch": {
+        "bettercombat:preset_id": "bettercombat:hammer"
+    }
+}
