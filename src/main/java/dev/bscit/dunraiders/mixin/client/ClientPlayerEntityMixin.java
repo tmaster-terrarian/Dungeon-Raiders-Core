@@ -66,7 +66,7 @@ public class ClientPlayerEntityMixin
         var item = _this.getActiveItem();
         if(item == null)
             return;
-        var component = item.get(DunraidersComponents.SLOW_DOWN_ON_USE_COMPONENT_TYPE);
+        var component = item.get(DunraidersComponents.SLOW_DOWN_ON_USE);
         if(component == null) // use default behavior
             return;
 
@@ -80,7 +80,7 @@ public class ClientPlayerEntityMixin
         var item = _this.getActiveItem();
         if(item == null)
             return;
-        var component = item.get(DunraidersComponents.SLOW_DOWN_ON_USE_COMPONENT_TYPE);
+        var component = item.get(DunraidersComponents.SLOW_DOWN_ON_USE);
         if(component == null) // use default behavior
             return;
 

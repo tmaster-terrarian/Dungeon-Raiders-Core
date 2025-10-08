@@ -15,7 +15,7 @@ public class DunraidersAttributes
         "immunity_ticks",
         new ClampedEntityAttribute("attribute.dunraiders.name.immunity_ticks", 5.0, 1.0, Double.MAX_VALUE)
             .setTracked(true)
-            .setCategory(Category.NEUTRAL)
+            .setCategory(Category.POSITIVE)
     );
 
     private static RegistryEntry<EntityAttribute> register(String id, EntityAttribute attribute)

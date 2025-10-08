@@ -1,0 +1,27 @@
+{
+    "dunraiders.tooltip.throwable": "Throwable",
+
+    "dunraiders.tooltip.holdForDetails": "Hold [%1$s] for Details",
+    "dunraiders.tooltip.keyShift": "Shift",
+
+    "text.autoconfig.dunraiders.title": "Dungeon Raiders Core",
+
+    "text.autoconfig.dunraiders.category.client": "Client",
+    "text.autoconfig.dunraiders.option.client.gui": "GUI",
+    "text.autoconfig.dunraiders.option.client.gui.shortenTooltips": "Shorten Tooltips",
+    "text.autoconfig.dunraiders.option.client.gui.shortenTooltips.@Tooltip": "Hide long item tooltips unless Shift is held",
+    "text.autoconfig.dunraiders.option.client.gameplay": "Gameplay",
+    "text.autoconfig.dunraiders.option.client.gameplay.steadyThirdPerson": "Steady Third Person",
+    "text.autoconfig.dunraiders.option.client.gameplay.steadyThirdPerson.@Tooltip": "Disable View Bobbing when in third person",
+
+    "text.autoconfig.dunraiders.category.common": "Common",
+    "text.autoconfig.dunraiders.option.common.gameplay": "Gameplay",
+    "text.autoconfig.dunraiders.option.common.gameplay.disableCrouch": "[WIP] Disable Crouching",
+
+    "attribute.dunraiders.name.immunity_ticks": "Immunity Ticks",
+
+    "block.dunraiders.sand_pile": "Sand Pile",
+    "block.dunraiders.red_sand_pile": "Red Sand Pile",
+
+    "itemGroup.dunraiders.items": "Dungeon Raiders Core"
+}
